@@ -1,66 +1,65 @@
-# smallyu 的博客
+# smallyu 的博客 (B 面)
 
-此仓库包含 [smallyu.net](https://smallyu.net) 网站的源代码，基于 [Hexo](https://hexo.io/) 构建，主题位于 `themes/yinwang`。
+这里是 [b.smallyu.net](https://b.smallyu.net) 的源代码仓库。本项目是一个基于 [Hexo](https://hexo.io/) 框架构建的静态博客，使用了自定义主题 `yinplus`。
 
-## 快速开始
+## 🛠 技术栈
 
-1. 安装 Node.js (建议 v14 及以上)。
-2. 安装依赖：
+- **核心框架**: [Hexo](https://hexo.io/)
+- **主题**: `yinplus` (位于 `themes/yinplus`)
+- **部署**: GitHub Pages (通过 `docs/` 目录)
 
-   ```bash
-   npm install
-   ```
+## 🚀 快速开始
 
-3. 启动本地服务器预览站点：
+### 1. 环境准备
 
-   ```bash
-   npx hexo server
-   ```
+确保你的本地环境已安装 [Node.js](https://nodejs.org/) (建议 v14 或更高版本)。
 
-4. 生成静态文件到 `docs/` 目录（用于部署至 GitHub Pages 等静态主机）：
+### 2. 安装依赖
 
-   ```bash
-   npx hexo generate
-   ```
+克隆仓库后，在项目根目录下运行：
 
-## 目录说明
-
-- `source/_posts`：Markdown 博文源文件。
-- `themes/yinwang`：博客使用的主题。
-- `docs/`：生成的静态站点目录，`_config.yml` 中的 `public_dir` 指向该目录。
-
-更多 Hexo 配置可参考 `_config.yml`。例如：
-
-```yaml
-# Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo/
-
-# Site
-title: smallyu的博客
-subtitle: smallyu的博客
-title_tooltip:
-description:
-keywords: smallyu,blog
-author: smallyu
-# language: en
-language: zh-cn
-timezone:
+```bash
+npm install
 ```
 
-以及：
+### 3. 本地开发
 
-```yaml
-permalink: :year/:month/:day/:title/
-permalink_defaults:
+启动本地服务器进行预览：
 
-# Directory
-source_dir: source
-public_dir: docs
-tag_dir: tags
-archive_dir: archives
-category_dir: categories
-code_dir: downloads/code
+```bash
+npx hexo server
 ```
 
-# blog-b
+访问 `http://localhost:4000` 查看效果。
+
+### 4. 构建站点
+
+生成静态文件到 `docs/` 目录：
+
+```bash
+npx hexo generate
+```
+
+### 5. 创建新文章
+
+```bash
+npx hexo new "文章标题"
+```
+
+## 📂 目录结构说明
+
+- **`source/`**: 博客内容源文件
+  - `_posts/`: Markdown 格式的博文
+  - `about/`: "关于"页面
+- **`themes/yinplus/`**: 博客使用的自定义主题
+- **`docs/`**: 构建生成的静态网站文件 (GitHub Pages 发布目录)
+- **`_config.yml`**: 站点全局配置文件
+- **`scaffolds/`**: 文章模版
+
+## ⚙️ 配置概览
+
+主要配置位于 `_config.yml` 文件中。
+
+- **站点信息**: 修改 `title`, `subtitle`, `author` 等字段。
+- **URL 设置**: `url` 设置为 `https://b.smallyu.net`。
+- **输出目录**: `public_dir` 设置为 `docs`，以便适配 GitHub Pages 的发布源设置。
