@@ -146,7 +146,7 @@ entry( x =&gt; console.log(&quot;entry=&quot;, x) );
 // v =&gt; v =&gt; &#123; throw v &#125;
 </code></pre>
 <p>来看这样一个例子，如何使用保存下来的 <code>savedK</code>：</p>
-<pre><code class="js">function run(f, k)
+<pre><code class="js">function runSavedK(f, k)
 &#123;
   try
   &#123;
@@ -158,14 +158,14 @@ entry( x =&gt; console.log(&quot;entry=&quot;, x) );
   &#125;
 &#125;
 
-run( () =&gt; savedK(&quot;1&quot;) );  // 1
-run( () =&gt; savedK(&quot;2&quot;) );  // 2
+runSavedK( () =&gt; savedK(&quot;1&quot;) );  // 1
+runSavedK( () =&gt; savedK(&quot;2&quot;) );  // 2
 </code></pre>
 <p>这里为什么要用 try…catch 捕获呢，因为 <code>savedK</code> 本身一定会发生 <code>throw</code>，所以要调用 <code>f</code>，就得捕获一下异常才能看到正常的返回值。</p>
-<p>那么到这里，看到 <code>run</code> 函数的例子，其实也很奇怪，你会发现，不就是给 <code>savedK</code> 赋了个值，赋值的内容是一个函数吗，完全可以像下面这样写，还要 <code>callcc</code> 那么费劲干什么？</p>
+<p>那么到这里，看到 <code>runSavedK</code> 函数的例子，其实也很奇怪，你会发现，不就是给 <code>savedK</code> 赋了个值，赋值的内容是一个函数吗，完全可以像下面这样写，还要 <code>callcc</code> 那么费劲干什么？</p>
 <pre><code class="js">let savedK_test = v =&gt; &#123; throw v &#125;;
-run( () =&gt; savedK_test(&quot;1&quot;) );  // 1
-run( () =&gt; savedK_test(&quot;2&quot;) );  // 2
+runSavedK( () =&gt; savedK_test(&quot;1&quot;) );  // 1
+runSavedK( () =&gt; savedK_test(&quot;2&quot;) );  // 2
 </code></pre>
 <p><code>callcc</code> 的含义是用闭包来保留执行现场，可以后续再对闭包进行调用，它其实就是个闭包。所以如果直接赋值为函数，就丢失了闭包的现场。我们上面的例子是把 <code>escapeK</code> 赋值给了外部的变量，所以不太容易看清楚效果。再看这个例子，可以体现出 <code>callcc</code> 可重入的特点：</p>
 <pre><code class="js">let savedK_foo = null;

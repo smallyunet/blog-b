@@ -46,8 +46,7 @@ test1( x =&gt; console.log(x) );
 </code></pre>
 <p>程序打印到 D，无论 <code>escapeK</code> 后面有多少语句，都不会再继续执行。</p>
 <h3 id="shift-x2F-reset"><a href="#shift-x2F-reset" class="headerlink" title="shift&#x2F;reset"></a>shift&#x2F;reset</h3><p>shift&#x2F;reset 是 delimited continuation 语义，意思是有边界的延续，下面直接给出完整的代码示例：</p>
-<pre><code class="js">
-const ready = [];
+<pre><code class="js">const ready = [];
 
 function run()
 &#123;

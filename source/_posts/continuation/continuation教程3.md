@@ -189,7 +189,7 @@ console.log(savedK.toString());
 来看这样一个例子，如何使用保存下来的 `savedK`：
 
 ```js
-function run(f, k)
+function runSavedK(f, k)
 {
   try
   {
@@ -201,18 +201,18 @@ function run(f, k)
   }
 }
 
-run( () => savedK("1") );  // 1
-run( () => savedK("2") );  // 2
+runSavedK( () => savedK("1") );  // 1
+runSavedK( () => savedK("2") );  // 2
 ```
 
 这里为什么要用 try...catch 捕获呢，因为 `savedK` 本身一定会发生 `throw`，所以要调用 `f`，就得捕获一下异常才能看到正常的返回值。
 
-那么到这里，看到 `run` 函数的例子，其实也很奇怪，你会发现，不就是给 `savedK` 赋了个值，赋值的内容是一个函数吗，完全可以像下面这样写，还要 `callcc` 那么费劲干什么？
+那么到这里，看到 `runSavedK` 函数的例子，其实也很奇怪，你会发现，不就是给 `savedK` 赋了个值，赋值的内容是一个函数吗，完全可以像下面这样写，还要 `callcc` 那么费劲干什么？
 
 ```js
 let savedK_test = v => { throw v };
-run( () => savedK_test("1") );  // 1
-run( () => savedK_test("2") );  // 2
+runSavedK( () => savedK_test("1") );  // 1
+runSavedK( () => savedK_test("2") );  // 2
 ```
 
 `callcc` 的含义是用闭包来保留执行现场，可以后续再对闭包进行调用，它其实就是个闭包。所以如果直接赋值为函数，就丢失了闭包的现场。我们上面的例子是把 `escapeK` 赋值给了外部的变量，所以不太容易看清楚效果。再看这个例子，可以体现出 `callcc` 可重入的特点：

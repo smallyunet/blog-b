@@ -62,7 +62,6 @@ test1( x => console.log(x) );
 shift/reset 是 delimited continuation 语义，意思是有边界的延续，下面直接给出完整的代码示例：
 
 ```js
-
 const ready = [];
 
 function run()
