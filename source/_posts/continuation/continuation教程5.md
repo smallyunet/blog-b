@@ -19,7 +19,13 @@ series: continuation 系列教程
 
 ### 安装
 
-访问 Racket 官方的安装包下载页面：<https://download.racket-lang.org/>
+访问 Racket 官方的安装包下载页面，下载安装即可：<https://download.racket-lang.org/>
+
+如果是 Mac 电脑，可以直接运行这个命令安装最小可运行的命令行版本：
+
+```bash
+brew install racket
+```
 
 下载安装即可，安装完成后会看到多出一个编辑器 DrRacket，这是 Racket 语言的 IDE 工具，打开使用就行。输入这两行代码，然后点击右上角的 `Run` 按钮，可以看到编辑器下方会输出 `1` 的字样，说明一切正常：
 
@@ -55,7 +61,7 @@ series: continuation 系列教程
 
 ### call/cc
 
-体验一下 call/cc 关键字怎么用：
+体验一下原版的 call/cc 关键字怎么用：
 
 ```rkt
 (displayln

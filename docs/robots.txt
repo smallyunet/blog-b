@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://blog-b.smallyu.net/sitemap.xml
+Sitemap: https://b.smallyu.net/sitemap.xml

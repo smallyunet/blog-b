@@ -11,7 +11,10 @@
 </ol>
 </blockquote>
 <p>我们在之前的教程中，使用 JavaScript 语言实现了 CPS、yield、call&#x2F;cc、shift&#x2F;reset 等语义，但是由于语言的限制，实现效果比较简陋。我们接下来使用 Racket 语言，来体验一下这些关键字的能力。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>访问 Racket 官方的安装包下载页面：<a href="https://download.racket-lang.org/">https://download.racket-lang.org/</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>访问 Racket 官方的安装包下载页面，下载安装即可：<a href="https://download.racket-lang.org/">https://download.racket-lang.org/</a></p>
+<p>如果是 Mac 电脑，可以直接运行这个命令安装最小可运行的命令行版本：</p>
+<pre><code class="bash">brew install racket
+</code></pre>
 <p>下载安装即可，安装完成后会看到多出一个编辑器 DrRacket，这是 Racket 语言的 IDE 工具，打开使用就行。输入这两行代码，然后点击右上角的 <code>Run</code> 按钮，可以看到编辑器下方会输出 <code>1</code> 的字样，说明一切正常：</p>
 <pre><code class="rkt">#lang racket
 
@@ -31,7 +34,7 @@
 
 (add-cps 1 2 (lambda (x) (displayln x)))
 </code></pre>
-<h3 id="call-x2F-cc"><a href="#call-x2F-cc" class="headerlink" title="call&#x2F;cc"></a>call&#x2F;cc</h3><p>体验一下 call&#x2F;cc 关键字怎么用：</p>
+<h3 id="call-x2F-cc"><a href="#call-x2F-cc" class="headerlink" title="call&#x2F;cc"></a>call&#x2F;cc</h3><p>体验一下原版的 call&#x2F;cc 关键字怎么用：</p>
 <pre><code class="rkt">(displayln
  (call/cc
   (lambda (k)

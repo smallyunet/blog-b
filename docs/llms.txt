@@ -1,10 +1,10 @@
-# blog-b
+# b.smallyu.net
 
 This is the site-level LLM index for this blog site.
 
 Primary language: Simplified Chinese
 Site type: personal blog with technical and personal writing
-Canonical domain: https://blog-b.smallyu.net
+Canonical domain: https://b.smallyu.net
 
 Scope
 - Writing spans blockchain technology, programming, software engineering, career, life, investment, and personal reflections.
@@ -16,12 +16,12 @@ Preferred use
 - Treat article pages as the source of truth. This file is only a site-level navigation aid.
 
 Key entry points
-- Home: https://blog-b.smallyu.net/
-- About: https://blog-b.smallyu.net/about/
-- Tags: https://blog-b.smallyu.net/tags/
-- Topics: https://blog-b.smallyu.net/topics/
-- Sitemap: https://blog-b.smallyu.net/sitemap.xml
-- Feed: https://blog-b.smallyu.net/atom.xml
+- Home: https://b.smallyu.net/
+- About: https://b.smallyu.net/about/
+- Tags: https://b.smallyu.net/tags/
+- Topics: https://b.smallyu.net/topics/
+- Sitemap: https://b.smallyu.net/sitemap.xml
+- Feed: https://b.smallyu.net/atom.xml
 
 Content areas
 - /tags/
