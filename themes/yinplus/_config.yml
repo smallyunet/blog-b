@@ -1,9 +1,9 @@
 # Navigation bar without starting with a slash
 menu:
   博客: ''
-  # 交流群: about
   # 精选主题: topics
   标签页: tags
+  联系：about
 
 # Recommended to enable when the page count is more than 1
 paginator: false
