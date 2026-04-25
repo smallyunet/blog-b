@@ -1252,9 +1252,9 @@
     
     
     
-    <category term="编程语言" scheme="https://b.smallyu.net/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
-    
     <category term="Go" scheme="https://b.smallyu.net/tags/Go/"/>
+    
+    <category term="编程语言" scheme="https://b.smallyu.net/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
     
   </entry>
   
@@ -3910,9 +3910,9 @@ table {
     
     
     
-    <category term="梦想" scheme="https://b.smallyu.net/tags/%E6%A2%A6%E6%83%B3/"/>
-    
     <category term="观点" scheme="https://b.smallyu.net/tags/%E8%A7%82%E7%82%B9/"/>
+    
+    <category term="梦想" scheme="https://b.smallyu.net/tags/%E6%A2%A6%E6%83%B3/"/>
     
   </entry>
   
